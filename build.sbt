@@ -14,7 +14,8 @@ libraryDependencies ++= Seq(
   // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
   "org.mongodb" % "mongo-java-driver" % "3.3.0",
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.8.1"
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.8.1",
+   javaWs
 
 )
 

@@ -3,10 +3,13 @@ package controllers;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.mongodb.*;
 import models.Pet;
 import play.*;
+import play.libs.Json;
 import play.mvc.*;
 import views.html.*;
 //import models.Person;
@@ -37,18 +40,21 @@ public class Application extends Controller {
     public Result listAllPets(){
 
         try {
-//        JSONObject json = new JSONObject();
-//        JSONArray array=new JSONArray();
-        StringBuilder result = new StringBuilder();
-        JSON
-        ObjectMapper mapper = new ObjectMapper();
+            List<Pet> petList = new ArrayList<>();
+       //StringBuilder result = new StringBuilder();
+       // ObjectNode res = Json.newObject();
+       // ObjectMapper mapper = new ObjectMapper();
         DBCursor cursorDoc = collection.find();
         for (int i=0;cursorDoc.hasNext();i++) {
             DBObject o = cursorDoc.next();
             Pet p = new Pet(o.get("name").toString(),((int)o.get("age")),o.get("sex").toString());
-            result.append(mapper.writeValueAsString(p));
+            petList.add(p);
+          //result.append(mapper.writeValueAsString(p));
+          //  JsonNode personJson = Json.toJson(p);
+          //  result.append(personJson);
         }
-            return ok(result.toString());
+            return ok(Json.toJson(petList));
+            //return ok(result.toString());
         }catch (Exception e){
             return internalServerError("Oops");
         }
@@ -57,22 +63,33 @@ public class Application extends Controller {
     public Result showPet(String petName){
 
         BasicDBObject query = new BasicDBObject("name",petName);
-        DBCursor curs = collection.find(query);
+        DBCursor cur = collection.find(query);
 
-        if (curs.hasNext())
-            return ok("Found " + curs.next());
+        if (cur.hasNext()) {
+            DBObject o = cur.next();
+            Pet p = new Pet(o.get("name").toString(),((int)o.get("age")),o.get("sex").toString());
+            return ok(Json.toJson(p));
+        }
         else
             return notFound("Pet not found!");
     }
 
     public Result addPet(String name, int age, String sex){
 
-        BasicDBObject document = new BasicDBObject();
-        document.put("name", name);
-        document.put("age", age);
-        document.put("sex", sex);
-        collection.insert(document);
-        return ok("Pet added!");
+        BasicDBObject query = new BasicDBObject("name", name);
+        DBCursor cur = collection.find(query);
+
+        if (cur.hasNext()) {
+            return badRequest("Pet already exists");
+        }
+        else{
+            BasicDBObject document = new BasicDBObject();
+            document.put("name", name);
+            document.put("age", age);
+            document.put("sex", sex);
+            collection.insert(document);
+            return created("Pet added!");
+        }
     }
 
     public Result deletePet(String name){
@@ -97,7 +114,7 @@ public class Application extends Controller {
             collection.update(query, document);
             return ok("Pet data updated!");
         }
-        else return notFound("The Pet does not exist");
+        else return notFound("This Pet does not exist");
     }
 
 //    @Transactional

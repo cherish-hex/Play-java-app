@@ -1,16 +1,46 @@
-New log file opened at Wed Aug 10 14:38:49 IST 2016 by 1445@cherish-pc.local
-Taking next connection to: 50403
-New client attempting to connect on port: 50404-50403
-  Address = /172.16.48.139:50403
-This client on port 50404 has uuid ae923de9-881a-4093-9ff9-cb5d95846b87 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-ae923de9-881a-4093-9ff9-cb5d95846b87
-Taking next connection to: 50403
+New log file opened at Wed Aug 10 16:36:47 IST 2016 by 2147@cherish-pc.local
+Taking next connection to: 50855
+New client attempting to connect on port: 50856-50855
+  Address = /172.16.48.139:50855
+This client on port 50856 has uuid 8d2e27ae-f219-498f-baee-bcf7f48a9281 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-8d2e27ae-f219-498f-baee-bcf7f48a9281
+Taking next connection to: 50855
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50403
+Taking next connection to: 50855
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50403
+Taking next connection to: 50855
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50403
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 50855
