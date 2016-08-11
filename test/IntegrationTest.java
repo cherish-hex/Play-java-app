@@ -25,7 +25,7 @@ public class IntegrationTest {
      */
     @Test
     public void test() {
-        running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, browser -> {
+        running(testServer(3333), HTMLUNIT, browser -> {
             browser.goTo("http://localhost:3333");
             assertThat(browser.pageSource(), containsString("Hello. Welcome to my pet shop!"));
         });

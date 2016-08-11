@@ -42,6 +42,10 @@ public class Application extends Controller {
     public Result addPet(String name, int age, String sex){
 
         try {
+            if(name.length() == 0 || (age > 31 || age < 0)
+                    || !(sex.equals("male") || sex.equals("female"))) {
+                return badRequest("Invalid Data!");
+            }
             boolean result = PetsDataAccessor.getInstance().addPet(name, age, sex);
 
             if(result)
@@ -91,15 +95,21 @@ public class Application extends Controller {
                         break;
                 }
             }
+
             int age = Integer.parseInt(a);
+            if(name.length() == 0 || (age > 31 || age < 0)
+                    || !(sex.equals("male") || sex.equals("female"))) {
+                return badRequest("Invalid Data!");
+            }
 
             boolean result = PetsDataAccessor.getInstance().updatePet(name, age, sex);
             if (result)
                 return ok("Pet data updated!");
             else
                 return notFound("This Pet does not exist!");
+
         }catch (NumberFormatException n){
-            return badRequest("Invalid Data");
+            return badRequest("Invalid Data!");
         }
         catch (Exception e){
             return internalServerError("Oops!!!");
