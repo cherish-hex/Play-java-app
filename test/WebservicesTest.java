@@ -31,18 +31,21 @@ public class WebservicesTest {
 //        assertNotNull(response);
 //    }
 
-    public static InMemoryRestServer server;
-    @BeforeClass
-    public static void beforeClass() throws Exception {
-        server = InMemoryRestServer.create(sut);
-    }
-    @AfterClass
-    public static void afterClass() throws Exception {
-        server.close();
-    }
-
-    @Test
-    Response response = server.newRequest("/myresource").request().invoke();
-    assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+//    public static InMemoryRestServer server;
+//    @BeforeClass
+//    public static void beforeClass() throws Exception {
+//        server = InMemoryRestServer.create(sut);
+//    }
+//    @AfterClass
+//    public static void afterClass() throws Exception {
+//        server.close();
+//    }
+//
+//    @Test
+//    public void postWithoutMocking() throws Exception {
+//
+//        Response response = server.newRequest("/myresource").request().invoke();
+//        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+//    }
 
 }
