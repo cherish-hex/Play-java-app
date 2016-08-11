@@ -1,4 +1,4 @@
-# Getting started with Play (Java)
+# Play Java Web services
 
 This project demonstrate how to create a simple CRUD application with Play.
 
@@ -19,4 +19,4 @@ Sample requests:
 Some validations:
 1. name must be unique
 2. age can be between 0-30
-3. sex can be either male or female
+3. sex can be either male or female  
