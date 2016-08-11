@@ -7,10 +7,6 @@ import play.libs.ws.WSClient;
 import play.libs.ws.WSResponse;
 import play.mvc.*;
 import play.test.*;
-
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletionStage;

@@ -5,11 +5,11 @@
 # Home page
 GET      /                           controllers.Application.index()
 GET      /list_pets                  controllers.Application.listAllPets()
-GET      /list/:name                 controllers.Application.showPet(name:String)
+GET      /get/:name                  controllers.Application.showPet(name:String)
 PUT      /add                        controllers.Application.addPet(name:String, age:Int, sex:String)
 POST     /update                     controllers.Application.updatePet()
 DELETE   /delete/:name               controllers.Application.deletePet(name:String)
-#GET     /persons                    controllers.Application.getPersons
+
 
 # Map static resources from the /public folder to the /assets URL path
 #GET     /assets/*file               controllers.Assets.at(path="/public", file)

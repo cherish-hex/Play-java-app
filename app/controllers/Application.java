@@ -1,26 +1,12 @@
 package controllers;
 
-import com.fasterxml.jackson.core.JsonEncoding;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.mongodb.*;
+
 import models.Pet;
-import play.*;
 import play.libs.Json;
 import play.mvc.*;
 import util.PetsDataAccessor;
-import views.html.*;
-//import models.Person;
-import play.data.FormFactory;
-import javax.inject.Inject;
-import java.io.File;
-import java.io.OutputStream;
 import java.util.*;
 
-import static play.libs.Json.*;
 
 public class Application extends Controller {
 
@@ -70,7 +56,7 @@ public class Application extends Controller {
     public Result deletePet(String name){
 
         try {
-            
+
             boolean result = PetsDataAccessor.getInstance().deletePet(name);
 
             if (result)
@@ -119,17 +105,4 @@ public class Application extends Controller {
             return internalServerError("Oops!!!");
         }
     }
-
-//    @Transactional
-//    public Result addPerson() {
-//        Person person = formFactory.form(Person.class).bindFromRequest().get();
-//        JPA.em().persist(person);
-//        return redirect(routes.Application.index());
-//    }
-
-//    @Transactional(readOnly = true)
-//    public Result getPersons() {
-//        List<Person> persons = (List<Person>) JPA.em().createQuery("select p from Person p").getResultList();
-//        return ok(toJson(persons));
-//    }
 }
