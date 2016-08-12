@@ -18,5 +18,5 @@ Sample requests:
 
 Some validations:  
 1. name must be unique  
-2. age can be between 0-30  
-3. sex can be either male or female  
+2. age must be between 0-30  
+3. sex must be either male or female  
