@@ -3,7 +3,7 @@
 This project demonstrate how to create a simple CRUD Web Services App with Play Java and Mongo DB.
 
 Steps to execute:  
-1. cd play-java-intro  
+1. cd Play-java-app    
 2. sbt  
 3. compile - to compile the project  
 4. run - to run the application on http://localhost:9000/  
