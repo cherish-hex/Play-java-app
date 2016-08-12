@@ -1,4 +1,4 @@
-# Play-Java Web services using mongo DB
+# Play-Java Web services App using mongo DB
 
 This project demonstrate how to create a simple CRUD Web Services App with Play Java and Mongo DB.
 
