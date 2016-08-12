@@ -14,14 +14,21 @@ public class PetsDataAccessor {
 
 
     private static PetsDataAccessor da;
-    private static MongoClient mongoClient = new MongoClient("localhost", 27017);
-    private static DB db = mongoClient.getDB("test");
-    private static DBCollection collection = db.getCollection("petscollection");
+    private static DBCollection collection;
 
 
     public static PetsDataAccessor getInstance() {
-        if (da == null)
-            return new PetsDataAccessor();
+        if (da == null) {
+            try {
+                da = new PetsDataAccessor();
+                MongoClient mongoClient = new MongoClient("localhost", 27017);
+                DB db = mongoClient.getDB("test");
+                collection = db.getCollection("petscollection");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return da;
+        }
         else
             return da;
     }
