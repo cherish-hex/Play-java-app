@@ -1,10 +1,7 @@
-New log file opened at Thu Aug 11 14:44:00 IST 2016 by 5439@cherish-pc.local
-Taking next connection to: 53704
-New client attempting to connect on port: 53705-53704
-  Address = /172.16.48.139:53704
-This client on port 53705 has uuid fdec4463-38d8-4f34-b5e3-19b9d8aa1263 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-fdec4463-38d8-4f34-b5e3-19b9d8aa1263
-Taking next connection to: 53704
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 53704
+New log file opened at Thu Aug 11 15:24:21 IST 2016 by 5924@cherish-pc.local
+Taking next connection to: 53962
+New client attempting to connect on port: 53963-53962
+  Address = /172.16.48.139:53962
+This client on port 53963 has uuid d6115de7-f624-472e-948f-7b5b97c42571 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-d6115de7-f624-472e-948f-7b5b97c42571
+Taking next connection to: 53962
